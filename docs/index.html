@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
-</head>
-
-<body style="margin: 0; overflow: hidden;">
-  <a-scene embedded arjs>
-
-
-    <a-marker preset="hiro">
-
-
-      <a-entity id="memory-object" geometry="primitive: sphere; radius: 0.5"
-        material="color: #ffcc00; emissive: #ffaa00" position="0 0.5 -2" 
-        animation="property: position; from: 0 0.45 0; to: 0 0.55 0; loop: true; dur: 1000; easing: easeInOutSine; dir:
-        alternate"
-        animation__rotate="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 4000; easing: linear"
-        event-set__click="_event: click; material.color: #ff44aa">
+  <head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js@1.7.2/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      
+      
+      <a-entity 
+        geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5" 
+        material="color: #FF5733" 
+        position="0 1.5 -2"
+        animation="property: position; from: 0 1.45 -2; to: 0 1.55 -2; loop: true; dur: 1000; easing: easeInOutSine; dir: alternate"
+        animation__rotate="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 4000; easing: linear">
       </a-entity>
 
-
-    </a-marker>
-
-
-    <a-entity camera></a-entity>
-
-  </a-scene>
-</body>
-
+      <a-camera position="0 1.6 0"></a-camera>
+      
+    </a-scene>
+  </body>
 </html>
